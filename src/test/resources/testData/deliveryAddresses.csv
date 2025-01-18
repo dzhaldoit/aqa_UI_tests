@@ -1,0 +1,3 @@
+Все поля, testData/deliveryAddressWithAllFieldsAreFilled.json
+Только обязательные поля, testData/deliveryAddressWithOnlyRequestedFieldsAreFilled.json
+Частичное заполнение, testData/deliveryAddressWithFewFieldsAreFilled.json
