@@ -42,10 +42,10 @@ public class AddToCartTests extends TestBase {
             mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Открыть карточку товара", () -> {
+            mainPage.closeCookiePolicy();
             mainPage.openProductCard(simpleItem.getItemName());
         });
         step("Добавить простой товар в корзину", () -> {
-            mainPage.closeCookiePolicy();
             productCardPopup.addProductToCard();
         });
         step("Выбрать способ доставки", () -> {
