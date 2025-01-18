@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.ProductCategoryEnum;
 import models.*;
@@ -26,9 +27,8 @@ public class MainPage {
         return this;
     }
 
-    public MainPage closeCookiePolicy() throws InterruptedException {
-        closeCookiePolicyButton.wait();
-        closeCookiePolicyButton.click();
+    public MainPage closeCookiePolicy() {
+        closeCookiePolicyButton.shouldBe(Condition.enabled).click();
         return this;
     }
 
@@ -46,8 +46,8 @@ public class MainPage {
     }
 
     public MainPage addProductToCartFromMainPage(SimpleItem item) {
-        $("[data-testid='menu__meta-product_" + item.getItemId() + "']").closeCookiePolicy()
-                .$("[data-testid='product__button']").scrollIntoView(false).click();
+        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
+                .$("[data-testid='product__button']").click();
         return this;
     }
 
