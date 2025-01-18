@@ -13,6 +13,7 @@ public class MainPage {
     private final SelenideElement allProductsSection = $("main");
     private final SelenideElement cityButton = $("[data-testid='header__about-slogan-text_link']");
     private final SelenideElement cartButton = $("[data-testid='navigation__cart']");
+    private final SelenideElement closeCookiePolicyButton = $(".cookie-policy-button");
     private final SelenideElement menu = $("nav");
 
     public MainPage openPage() {
@@ -25,6 +26,11 @@ public class MainPage {
         return this;
     }
 
+    public MainPage closeCookiePolicy() throws InterruptedException {
+        closeCookiePolicyButton.wait();
+        closeCookiePolicyButton.click();
+        return this;
+    }
 
     public MainPage openProductCard(String productName) {
         allProductsSection.find(byText(productName)).click();
