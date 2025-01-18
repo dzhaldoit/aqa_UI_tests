@@ -1,6 +1,6 @@
 {
-  "comboName": "Комбо Завтрак на двоих",
-  "comboPrice": "549",
+  "comboName": "Завтрак на двоих",
+  "comboPrice": "599",
   "products": [
     {
       "itemName": "Омлет с беконом",
@@ -19,7 +19,7 @@
       "additiveItems": []
     },
     {
-      "itemName": "Кофе Латте",
+      "itemName": "Добрый Кола",
       "itemPrice": "",
       "itemSurcharge": "",
       "itemInComboId": "",
@@ -27,7 +27,7 @@
       "additiveItems": []
     },
     {
-      "itemName": "Кофе Капучино",
+      "itemName": "Добрый Кола",
       "itemPrice": "",
       "itemSurcharge": "",
       "itemInComboId": "",

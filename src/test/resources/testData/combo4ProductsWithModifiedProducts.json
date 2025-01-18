@@ -1,43 +1,38 @@
 {
-  "comboName": "Комбо Завтрак на двоих",
-  "comboPrice": "549",
+  "comboName": "Завтрак на двоих",
+  "comboPrice": "599",
   "products": [
     {
-      "itemName": "Омлет с беконом",
+      "itemName": "Омлет с ветчиной и грибами",
       "itemPrice": "",
       "itemSurcharge": "",
-      "itemInComboId": "11edd2e1988fadbb083d22aa7091a0a0",
+      "itemInComboId": "11efa925b7360126ef81aeb84c119700",
       "itemOrderInCombo": "1",
       "additiveItems": []
     },
     {
-      "itemName": "Омлет с пепперони",
+      "itemName": "Омлет с беконом",
       "itemPrice": "",
       "itemSurcharge": "0",
-      "itemInComboId": "11ed6428b0626f2f040d14b3c2780b70",
+      "itemInComboId": "11edd2e1988fadbb083d22aa7091a0a0",
       "itemOrderInCombo": "2",
-      "additiveItems": []
-    },
-    {
-      "itemName": "Добрый Кола без сахара",
-      "itemPrice": "",
-      "itemSurcharge": "0",
-      "itemInComboId": "11ef080abe20b9a775549b17d7431e50",
-      "itemOrderInCombo": "3",
       "additiveItems": []
     },
     {
       "itemName": "Кофе Капучино",
       "itemPrice": "",
+      "itemSurcharge": "0",
+      "itemInComboId": "11efa925b7360126ef81aeb8ad1b3420",
+      "itemOrderInCombo": "3",
+      "additiveItems": []
+    },
+    {
+      "itemName": "Кофе Латте",
+      "itemPrice": "",
       "itemSurcharge": "",
-      "itemInComboId": "11ef080abe20b9a775549b17bdd4a6a0",
+      "itemInComboId": "11ef080abe20b9a775549b17d7431e50",
       "itemOrderInCombo": "4",
-      "additiveItems": [
-        {
-          "itemName": "Сироп со вкусом фундука",
-          "itemSurcharge": "20"
-        }
-      ]
+      "additiveItems": []
     }
   ]
 }

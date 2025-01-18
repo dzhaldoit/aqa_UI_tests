@@ -47,14 +47,4 @@ public class ComboCardPopup {
         }
         return this;
     }
-
-    public ComboCardPopup changeItemIngredientsInCombo(ComboItem comboItem, int order) {
-        for (SimpleItem product : comboItem.getProducts()) {
-            if (product.getItemOrderInCombo() == order) {
-                int price = comboItem.getComboPrice() + changeItemIngredientsInCombo(product);
-                comboItem.setComboPrice(price);
-            }
-        }
-        return this;
-    }
 }

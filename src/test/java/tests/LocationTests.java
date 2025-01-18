@@ -41,7 +41,6 @@ public class LocationTests extends TestBase {
 
         step("Выбрать город", () -> {
             selectCityPopUp.selectCityBySearch(firstCity);
-            mainPage.closeCookiePolicy();
         });
 
         step("Добавить простой товар в корзину", () -> {
@@ -88,7 +87,6 @@ public class LocationTests extends TestBase {
         });
         step("Выбрать город", () -> {
             selectCityPopUp.selectCityBySearch(address.getCity());
-            mainPage.closeCookiePolicy();
         });
         step("Добавить простой товар в корзину", () -> {
             mainPage.addProductToCartFromMainPage(simpleItem);

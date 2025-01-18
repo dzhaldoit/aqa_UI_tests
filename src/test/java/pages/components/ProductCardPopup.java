@@ -23,14 +23,6 @@ public class ProductCardPopup {
         $(pizzaSizeEnum.getSelector()).click();
     }
 
-    public void removeBaseIngredientsFromPizza(PizzaItem pizza) {
-        for (AdditiveItem ingredient : pizza.getExcludedItems()) {
-            pizzaModifyingArea.find(withText("тесто")).parent().sibling(0)
-                    .find(withTextCaseInsensitive(ingredient.getItemName())).click();
-
-        }
-    }
-
     public void chooseAdditiveIngredientsForPizza(PizzaItem pizza) {
         Integer price = pizza.getPizzaPrice();
         for (AdditiveItem ingredient : pizza.getAdditiveItems()) {

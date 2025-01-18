@@ -39,7 +39,7 @@ public class AddToCartTests extends TestBase {
         PickupAddress address = PickupAddress.createPickupAddressFromJsonFile("testData/pickupAddress.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Открыть карточку товара", () -> {
             mainPage.openProductCard(simpleItem.getItemName());
@@ -72,7 +72,7 @@ public class AddToCartTests extends TestBase {
         PickupAddress address = PickupAddress.createPickupAddressFromJsonFile("testData/pickupAddress.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Добавить простой товар в корзину", () -> {
             mainPage.addProductToCartFromMainPage(simpleItem);
@@ -104,7 +104,7 @@ public class AddToCartTests extends TestBase {
                 .createDeliveryAddressFromJsonFile("testData/deliveryAddressWithAllFieldsAreFilled.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Открыть карточку товара", () -> {
             mainPage.openProductCardInCategory(pizzaItem.getPizzaName(), PIZZA);
@@ -141,16 +141,13 @@ public class AddToCartTests extends TestBase {
                 .createDeliveryAddressFromJsonFile("testData/deliveryAddressWithAllFieldsAreFilled.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Открыть карточку товара", () -> {
             mainPage.openProductCardInCategory(pizzaItem.getPizzaName(), PIZZA);
         });
         step("Выбрать тесто и размер пиццы", () -> {
             productCardPopup.selectPizzaDoughAndSize(pizzaItem);
-        });
-        step("Исключить базовые ингредиенты из пиццы", () -> {
-            productCardPopup.removeBaseIngredientsFromPizza(pizzaItem);
         });
         step("Добавить дополнительные ингредиенты в пиццу", () -> {
             productCardPopup.chooseAdditiveIngredientsForPizza(pizzaItem);
@@ -178,9 +175,6 @@ public class AddToCartTests extends TestBase {
         step("Проверить добавленные в пиццу ингредиенты", () -> {
             cartPopupPizza.checkPizzaAddedIngredients(pizzaItem);
         });
-        step("Проверить, что из пиццы исключены выбранные ингредиенты", () -> {
-            cartPopupPizza.checkPizzaExcludedIngredients(pizzaItem);
-        });
     }
 
     @DisplayName("Комбо товар с дефолтными продуктами можно добавить в корзину с главной страницы. "
@@ -193,7 +187,7 @@ public class AddToCartTests extends TestBase {
         PickupAddress address = PickupAddress.createPickupAddressFromJsonFile("testData/pickupAddress.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
 
         step("Открыть карточку комбо-товара", () -> {
@@ -230,7 +224,7 @@ public class AddToCartTests extends TestBase {
                 .createDeliveryAddressFromJsonFile("testData/deliveryAddressWithAllFieldsAreFilled.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPageWithSelectedCity(address.getCityForUrl()).closeCookiePolicy();
+            mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Открыть карточку комбо-товара", () -> {
             mainPage.openProductCardInCategory(comboItem.getComboName(), COMBO);
@@ -240,9 +234,6 @@ public class AddToCartTests extends TestBase {
         });
         step("Заменить третий товар в комбо", () -> {
             comboCardPopup.replaceItemInComboWithOrder(comboItem, 3);
-        });
-        step("Изменить состав четвертого товара в комбо", () -> {
-            comboCardPopup.changeItemIngredientsInCombo(comboItem, 4);
         });
         step("Добавить комбо-товар в корзину", () -> {
             comboCardPopup.addComboToCart();

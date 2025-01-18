@@ -4,9 +4,9 @@ import lombok.Getter;
 
 @Getter
 public enum PizzaSizeEnum {
-    BIG("Большая", "[data-testid='menu__pizza_size_Большая']", "35 см"),
-    MEDIUM("Средняя", "[data-testid='menu__pizza_size_Средняя']", "30 см"),
-    SMALL("Маленькая", "[data-testid='menu__pizza_size_Маленькая']", "25 см");
+    BIG("Большая", "[data-testid='menu__pizza_size_35 см']", "35 см"),
+    MEDIUM("Средняя", "[data-testid='menu__pizza_size_30 см']", "30 см"),
+    SMALL("Маленькая", "[data-testid='menu__pizza_size_25 см']", "25 см");
     private final String name;
     private final String selector;
     private final String size;

@@ -1,6 +1,6 @@
 {
-  "pizzaName": "Пицца Жюльен",
-  "pizzaPrice": "899",
+  "pizzaName": "Жюльен",
+  "pizzaPrice": "979",
   "pizzaSize": "BIG",
   "dough": "Тонкое",
   "additiveItems": [
@@ -15,11 +15,11 @@
   ],
   "excludedItems": [
     {
-      "itemName": "красный лук",
+      "itemName": "Красный лук",
       "itemSurcharge": ""
     },
     {
-      "itemName": "чеснок",
+      "itemName": "Митболы",
       "itemSurcharge": ""
     }
   ]
