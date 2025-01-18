@@ -44,6 +44,7 @@ public class LocationTests extends TestBase {
         });
 
         step("Добавить простой товар в корзину", () -> {
+            mainPage.closeCookiePolicy();
             mainPage.addProductToCartFromMainPage(simpleItem);
         });
         step("Выбрать способ доставки", () -> {
@@ -86,9 +87,10 @@ public class LocationTests extends TestBase {
             mainPage.openPage();
         });
         step("Выбрать город", () -> {
-            selectCityPopUp.selectCityBySearch(address.getCity()).closeCookiePolicy();
+            selectCityPopUp.selectCityBySearch(address.getCity());
         });
         step("Добавить простой товар в корзину", () -> {
+            mainPage.closeCookiePolicy();
             mainPage.addProductToCartFromMainPage(simpleItem);
         });
         step("Выбрать способ доставки", () -> {

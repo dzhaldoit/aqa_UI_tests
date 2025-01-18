@@ -45,6 +45,7 @@ public class AddToCartTests extends TestBase {
             mainPage.openProductCard(simpleItem.getItemName());
         });
         step("Добавить простой товар в корзину", () -> {
+            mainPage.closeCookiePolicy();
             productCardPopup.addProductToCard();
         });
         step("Выбрать способ доставки", () -> {
@@ -75,6 +76,7 @@ public class AddToCartTests extends TestBase {
             mainPage.openPageWithSelectedCity(address.getCityForUrl());
         });
         step("Добавить простой товар в корзину", () -> {
+            mainPage.closeCookiePolicy();
             mainPage.addProductToCartFromMainPage(simpleItem);
         });
         step("Выбрать способ доставки", () -> {
