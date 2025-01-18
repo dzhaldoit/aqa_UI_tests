@@ -1,6 +1,5 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.ProductCategoryEnum;
 import models.*;
@@ -27,8 +26,9 @@ public class MainPage {
         return this;
     }
 
-    public MainPage closeCookiePolicy() {
-        closeCookiePolicyButton.shouldBe(Condition.enabled).click();
+    public MainPage closeCookiePolicy() throws InterruptedException {
+        closeCookiePolicyButton.wait();
+        closeCookiePolicyButton.click();
         return this;
     }
 
