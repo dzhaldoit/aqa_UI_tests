@@ -46,7 +46,7 @@ public class MainPage {
     }
 
     public MainPage addProductToCartFromMainPage(SimpleItem item) {
-        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
+        $("[data-testid='menu__meta-product_" + item.getItemId() + "']").closeCookiePolicy()
                 .$("[data-testid='product__button']").scrollIntoView(false).click();
         return this;
     }

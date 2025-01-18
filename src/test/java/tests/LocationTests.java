@@ -36,7 +36,7 @@ public class LocationTests extends TestBase {
         SimpleItem simpleItem = SimpleItem.createSimpleItemFromJsonFile("testData/simpleDefaultProduct.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPage().closeCookiePolicy();
+            mainPage.openPage();
         });
 
         step("Выбрать город", () -> {
@@ -83,7 +83,7 @@ public class LocationTests extends TestBase {
         SimpleItem simpleItem = SimpleItem.createSimpleItemFromJsonFile("testData/simpleDefaultProduct.json");
 
         step("Открыть страницу", () -> {
-            mainPage.openPage().closeCookiePolicy();
+            mainPage.openPage();
         });
         step("Выбрать город", () -> {
             selectCityPopUp.selectCityBySearch(address.getCity());
