@@ -1,8 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.ProductCategoryEnum;
 import models.*;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
@@ -40,9 +43,17 @@ public class MainPage {
         return this;
     }
 
+    public MainPage closeCookiePolicy() {
+        if (closeCookiePolicyButton.exists()) {
+            closeCookiePolicyButton.shouldBe(Condition.visible, Duration.ofSeconds(10));
+            closeCookiePolicyButton.click();
+
+        }
+        return this;
+    }
+
     public MainPage addProductToCartFromMainPage(SimpleItem item) throws InterruptedException {
-        closeCookiePolicyButton.wait();
-        closeCookiePolicyButton.click();
+        closeCookiePolicy();
         $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
                 .$("[data-testid='product__button']").click();
         return this;
