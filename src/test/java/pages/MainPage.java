@@ -61,6 +61,7 @@ public class MainPage {
     public MainPage addProductToCartFromMainPage(SimpleItem item) {
         SelenideElement productContainer = $("[data-testid='menu__meta-product_" + item.getItemId() + "']");
         SelenideElement addToCartButton = productContainer.$("[data-testid='product__button']");
+        executeJavaScript("arguments[0].scrollIntoView(true);", addToCartButton);
         closeCookiePolicy();
         addToCartButton.click();
         return this;
