@@ -52,12 +52,20 @@ public class MainPage {
         return this;
     }
 
-    public MainPage addProductToCartFromMainPage(SimpleItem item) throws InterruptedException {
+//    public MainPage addProductToCartFromMainPage(SimpleItem item) throws InterruptedException {
+//        closeCookiePolicy();
+//        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
+//                .$("[data-testid='product__button']").click();
+//        return this;
+//    }
+    public MainPage addProductToCartFromMainPage(SimpleItem item) {
+        SelenideElement productContainer = $("[data-testid='menu__meta-product_" + item.getItemId() + "']");
+        SelenideElement addToCartButton = productContainer.$("[data-testid='product__button']");
         closeCookiePolicy();
-        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
-                .$("[data-testid='product__button']").click();
+        addToCartButton.click();
         return this;
     }
+
 
     public MainPage openCart() {
         $(".popup-fade").should(disappear);
