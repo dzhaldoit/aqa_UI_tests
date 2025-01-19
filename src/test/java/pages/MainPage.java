@@ -18,6 +18,8 @@ public class MainPage {
     private final SelenideElement cartButton = $("[data-testid='navigation__cart']");
     private final SelenideElement closeCookiePolicyButton = $(".cookie-policy-button");
     private final SelenideElement menu = $("nav");
+    private final SelenideElement addToCartButton = $("[data-testid='add-to-cart-button']");
+
 
     public MainPage openPage() {
         open("");
@@ -43,30 +45,15 @@ public class MainPage {
         return this;
     }
 
-    public MainPage closeCookiePolicy() {
-        if (closeCookiePolicyButton.exists()) {
-            closeCookiePolicyButton.shouldBe(Condition.visible, Duration.ofSeconds(10));
-            closeCookiePolicyButton.click();
 
-        }
-        return this;
-    }
-
-//    public MainPage addProductToCartFromMainPage(SimpleItem item) throws InterruptedException {
-//        closeCookiePolicy();
-//        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
-//                .$("[data-testid='product__button']").click();
-//        return this;
-//    }
     public MainPage addProductToCartFromMainPage(SimpleItem item) {
         SelenideElement productContainer = $("[data-testid='menu__meta-product_" + item.getItemId() + "']");
         SelenideElement addToCartButton = productContainer.$("[data-testid='product__button']");
         executeJavaScript("arguments[0].scrollIntoView(true);", addToCartButton);
-        closeCookiePolicy();
-        addToCartButton.click();
+        $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
+                .$("[data-testid='product__button']").click();
         return this;
     }
-
 
     public MainPage openCart() {
         $(".popup-fade").should(disappear);
