@@ -26,11 +26,6 @@ public class MainPage {
         return this;
     }
 
-    public MainPage closeCookiePolicy() throws InterruptedException {
-        closeCookiePolicyButton.wait();
-        closeCookiePolicyButton.click();
-        return this;
-    }
 
     public MainPage openProductCard(String productName) {
         allProductsSection.find(byText(productName)).click();
@@ -45,7 +40,9 @@ public class MainPage {
         return this;
     }
 
-    public MainPage addProductToCartFromMainPage(SimpleItem item) {
+    public MainPage addProductToCartFromMainPage(SimpleItem item) throws InterruptedException {
+        closeCookiePolicyButton.wait();
+        closeCookiePolicyButton.click();
         $("[data-testid='menu__meta-product_" + item.getItemId() + "']")
                 .$("[data-testid='product__button']").click();
         return this;
